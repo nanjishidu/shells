@@ -33,17 +33,12 @@ sed -i "" "s/bind 127.0.0.1/#bind 127.0.0.1/g" \
 /tmp/redis.conf
 sed -i "" "s/protected-mode yes/#protected-mode yes/g" \
 /tmp/redis.conf
+
+docker pull redis
 if [ $? != 0 ]; then 
-	echo "set redis.conf slave failed"
+	echo "docker pull redis failed"
 	exit 1
 fi
-
-
-#docker pull redis
-#if [ $? != 0 ]; then 
-#	echo "docker pull redis failed"
-#	exit 1
-#fi
 
 docker run -h redis-master --name redis-master -p 6379:6379 -d redis
 if [ $? != 0 ]; then 
