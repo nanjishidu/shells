@@ -12,13 +12,13 @@ fi
 apt-get update
 apt-get install -y rsync wget zip
 cd /tmp
-wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/inotify-tools-3.14.tar.gz
+wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/inotify-tools-3.14.tar.gz -o inotify-tools-3.14.tar.gz
 tar -zxvf inotify-tools-3.14.tar.gz
 cd inotify-tools-3.14
 ./configure --prefix=/usr/local/inotify 
 make && make install
 cd /tmp
-wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/sersync2.5.4_64bit_binary_stable_final.tar.gz
+wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/sersync2.5.4_64bit_binary_stable_final.tar.gz -o sersync2.5.4_64bit_binary_stable_final.tar.gz
 tar -zxvf sersync2.5.4_64bit_binary_stable_final.tar.gz
 mv sersync2.5.4_64bit_binary_stable_final /usr/local/sersync
 echo "${user}:${password}" >/usr/local/sersync/sersync.pass 
