@@ -1,16 +1,10 @@
 #!/bin/sh
-#ubuntu 开启服务端
-#rsync一般是server到client sersync一般是client到server，sersync可以做到实时监控
-# apt-get install -y wget gcc make
-# mkdir -p /opt/tmp
-# cd /opt/tmp
-# wget http://qiniushare.gophper.com/rsync-3.1.2.tar.gz
-# tar -zxvf rsync-3.1.2.tar.gz
-# cd rsync-3.1.2
-# ./configure
-# make && make install
-user=liu;
-password=123;
+# 配置数据同步接收端 安装rsync
+
+
+#user和password 为rsync同步账号密码，配置要一致
+user=nanjishidu;
+password=nanjishidu;
 if [ "$1" != "" ]; then
     user=${1}
 fi
@@ -42,4 +36,12 @@ echo "${user}:${password}" > /etc/rsyncd.pass
 chmod 600  /etc/rsyncd.pass
 mkdir -p /sites/websites
 /etc/init.d/rsync start
-# rsync-server.sh
+
+# ubuntu 编译安装rsync
+# apt-get install -y wget gcc make
+# cd /tmp
+# wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/rsync-3.1.2.tar.gz
+# tar -zxvf rsync-3.1.2.tar.gz
+# cd rsync-3.1.2
+# ./configure
+# make && make install
