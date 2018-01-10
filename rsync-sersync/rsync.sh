@@ -1,15 +1,28 @@
 #!/bin/sh
 # 配置数据同步接收端 安装rsync
-
-
 #user和password 为rsync同步账号密码，配置要一致
 user=nanjishidu;
-password=nanjishidu;
+password=3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=;
+# 同步的模块名需要一致
+module=htdocs;
+# 同步文件存放目录
+path=/var/www/htdocs;
+# 同步文件描述
+comment=synchronize files;
 if [ "$1" != "" ]; then
     user=${1}
 fi
 if [ "$2" != "" ]; then
     password=${2}
+fi
+if [ "$3" != "" ]; then
+    module=${3}
+fi
+if [ "$4" != "" ]; then
+    path=${4}
+fi
+if [ "$5" != "" ]; then
+    comment=${5}
 fi
 apt-get update
 apt-get install -y rsync
@@ -27,20 +40,20 @@ log file=/var/log/rsyncd.log
 pid file=/var/run/rsyncd.pid
 lock file=/var/run/rsyncd.lock
 #忽略无关错误
-ignore errors = yes
+ignore errors=yes
 #设置rsync服务端文件为读写权限
-read only = no
+read only=no
 # hosts allow =  192.168.1.1/24 只允许IP 192.168.1.1 ip段进行同步
-hosts allow = *
-hosts deny = *
+hosts allow=*
+hosts deny=*
 #密码认证文件，格式(虚拟用户名:密码）
 secrets file=/etc/rsyncd.pass
 # 模块名
-[htdocs]
+[${module}]
 # 同步目录
-path=/sites/websites
+path=${path}
 # 描述
-comment = html files
+comment=${comment}
 EOF
 echo "${user}:${password}" > /etc/rsyncd.pass 
 chmod 600  /etc/rsyncd.pass

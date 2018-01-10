@@ -2,12 +2,27 @@
 # 配置数据同步发送端 安装sersync + inotify + rsync
 # user和password 为rsync同步账号密码，配置要一致
 user=nanjishidu;
-password=nanjishidu;
+password=3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=;
+# 同步的模块名 需要一致
+module=htdocs;
+# 接收服务器ip
+remote_ip=192.168.1.2;
+# 本地监听目录
+local_path=/var/www/htdocs/
 if [ "$1" != "" ]; then
     user=${1}
 fi
 if [ "$2" != "" ]; then
     password=${2}
+fi
+if [ "$3" != "" ]; then
+    module=${3}
+fi
+if [ "$4" != "" ]; then
+    ip=${4}
+fi
+if [ "$5" != "" ]; then
+    local_path=${5}
 fi
 apt-get update
 apt-get install -y rsync wget
@@ -45,9 +60,9 @@ cat>/usr/local/sersync/confxml.xml<<EOF
      </inotify>
  
      <sersync>
-     <localpath watch="/var/www/htdocs/"> <!-- 这里填写服务器A要同步的文件夹路径-->
-     <remote ip="192.168.1.2" name="htdocs"/> <!-- 这里填写服务器B的IP地址和模块名-->
-     <remote ip="192.168.1.3" name="htdocs"/> <!-- 这里填写服务器C的IP地址和模块名-->
+     <localpath watch="${local_path}"> <!-- 这里填写服务器A要同步的文件夹路径-->
+     <remote ip="${remote_ip}" name="${module}"/> <!-- 这里填写服务器B的IP地址和模块名-->
+     <!--<remote ip="192.168.1.3" name="htdocs"/>--> <!-- 这里填写服务器C的IP地址和模块名-->
      </localpath>
      <rsync>
      <commonParams params="-artuz"/>
