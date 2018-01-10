@@ -54,6 +54,7 @@ secrets file=/etc/rsyncd.pass
 path=${path}
 # 描述
 comment=${comment}
+
 EOF
 echo "${user}:${password}" > /etc/rsyncd.pass 
 chmod 600  /etc/rsyncd.pass
