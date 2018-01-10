@@ -17,7 +17,7 @@ tar -zxvf inotify-tools-3.14.tar.gz
 cd inotify-tools-3.14
 ./configure --prefix=/usr/local/inotify 
 make && make install
-cd ../
+cd /tmp
 wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/sersync2.5.4_64bit_binary_stable_final.tar.gz
 tar -zxvf sersync2.5.4_64bit_binary_stable_final.tar.gz
 mv sersync2.5.4_64bit_binary_stable_final /usr/local/sersync
