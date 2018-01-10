@@ -19,9 +19,9 @@ cd inotify-tools-3.14
 make && make install
 cd ../
 wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/sersync2.5.4_64bit_binary_stable_final.tar.gz
-tar -zxvf sersync2.5.4_64bit_binary_stable_final.zip
+tar -zxvf sersync2.5.4_64bit_binary_stable_final.tar.gz
 mv sersync2.5.4_64bit_binary_stable_final /usr/local/sersync
 echo "${user}:${password}" >/usr/local/sersync/sersync.pass 
 chmod 600  /usr/local/sersync/sersync.pass 
 
-/usr/local/sersync/sersync2 -r -d -o /usr/local/sersync/confxml.xml >/usr/local/sersync/rsync.log 2>&1 
+# /usr/local/sersync/sersync2 -r -d -o /usr/local/sersync/confxml.xml >/usr/local/sersync/rsync.log 2>&1 
