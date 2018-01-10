@@ -38,12 +38,12 @@ chmod +x sersync.sh
 # 模块名:同步的模块名需要一致
 # 路径:同步文件存放目录
 # 描述:同步文件描述
-# ./rysnc.sh 用户名 密码  模块名  路径  描述
+# ./rsync.sh 用户名 密码  模块名  路径  描述
 # 如果不填使用默认配置
-# ./rysnc.sh nanjishidu 3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=  htdocs  /var/www/htdocs  "synchronize files"
+# ./rsync.sh nanjishidu 3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=  htdocs  /var/www/htdocs  "synchronize files"
 wget https://raw.githubusercontent.com/nanjishidu/shells/master/rsync-sersync/rsync.sh
-chmod +x rysnc.sh
-./rysnc.sh
+chmod +x rsync.sh
+./rsync.sh
 ```
 
 ### 2.2.配置多服务器同步
