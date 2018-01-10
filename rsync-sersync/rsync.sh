@@ -8,7 +8,7 @@ module=htdocs;
 # 同步文件存放目录
 path=/var/www/htdocs;
 # 同步文件描述
-comment=synchronize files;
+comment="synchronize files";
 if [ "$1" != "" ]; then
     user=${1}
 fi
@@ -57,7 +57,7 @@ comment=${comment}
 EOF
 echo "${user}:${password}" > /etc/rsyncd.pass 
 chmod 600  /etc/rsyncd.pass
-mkdir -p /sites/websites
+mkdir -p ${path}
 /etc/init.d/rsync start
 
 # ubuntu 编译安装rsync
