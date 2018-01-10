@@ -6,7 +6,7 @@ password=3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=;
 # 同步的模块名 需要一致
 module=htdocs;
 # 接收服务器ip
-remote_ip=192.168.1.2;
+remote_ip=192.168.1.3;
 # 本地监听目录
 local_path=/var/www/htdocs/
 if [ "$1" != "" ]; then
@@ -104,4 +104,4 @@ cat>/usr/local/sersync/confxml.xml<<EOF
      </plugin>
     </head>
 EOF
-# /usr/local/sersync/sersync2 -r -d -o /usr/local/sersync/confxml.xml >/usr/local/sersync/rsync.log 2>&1 
+/usr/local/sersync/sersync2 -r -d -o /usr/local/sersync/confxml.xml >/usr/local/sersync/rsync.log 2>&1 
