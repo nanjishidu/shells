@@ -51,7 +51,7 @@ cat>/usr/local/sersync/confxml.xml<<EOF
      </localpath>
      <rsync>
      <commonParams params="-artuz"/>
-     <auth start="true" users="nanjishidu" passwordfile="/usr/local/sersync/sersync.pass"/> <!-- rsync+密码文件 这里填写服务器B的认证信息-->
+     <auth start="true" users="${user}" passwordfile="/usr/local/sersync/sersync.pass"/> <!-- rsync+密码文件 这里填写服务器B的认证信息-->
      <userDefinedPort start="false" port="874"/><!-- port=874 -->
      <timeout start="false" time="100"/><!-- timeout=100 -->
      <ssh start="false"/>
