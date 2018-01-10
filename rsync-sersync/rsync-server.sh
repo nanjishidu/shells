@@ -18,19 +18,29 @@ cat>/etc/rsyncd.conf<<EOF
 uid=root
 gid=root
 log file=/var/log/rsyncd.log
+#最大连接数
 max connections=36000
+#默认为true，修改为no，增加对目录文件软连接的备份
 use chroot=no
+#定义日志存放位置
 log file=/var/log/rsyncd.log
 pid file=/var/run/rsyncd.pid
 lock file=/var/run/rsyncd.lock
-[htdocs1]
-path=/sites/websites
-comment = video files
+#忽略无关错误
 ignore errors = yes
+#设置rsync服务端文件为读写权限
 read only = no
+# hosts allow =  192.168.1.1/24 只允许IP 192.168.1.1 ip段进行同步
 hosts allow = *
 hosts deny = *
+#密码认证文件，格式(虚拟用户名:密码）
 secrets file=/etc/rsyncd.pass
+# 模块名
+[htdocs]
+# 同步目录
+path=/sites/websites
+# 描述
+comment = html files
 EOF
 echo "${user}:${password}" > /etc/rsyncd.pass 
 chmod 600  /etc/rsyncd.pass
