@@ -41,7 +41,7 @@ chmod +x sersync.sh
 # ./rysnc.sh 用户名 密码  模块名  路径  描述
 # 如果不填使用默认配置
 # ./rysnc.sh nanjishidu 3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=  htdocs  /var/www/htdocs  "synchronize files"
-wget https://raw.githubusercontent.com/nanjishidu/shells/master/rsync-sersync/rysnc.sh
+wget https://raw.githubusercontent.com/nanjishidu/shells/master/rsync-sersync/rsync.sh
 chmod +x rysnc.sh
 ./rysnc.sh
 ```
