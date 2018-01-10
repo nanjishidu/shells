@@ -50,7 +50,7 @@ mkdir -p /sites/websites
 # ubuntu 编译安装rsync
 # apt-get install -y wget gcc make
 # cd /tmp
-# wget https://github.com/nanjishidu/shells/blob/master/rsync-sersync/rsync-3.1.2.tar.gz
+# wget https://github.com/nanjishidu/shells/raw/master/rsync-sersync/rsync-3.1.2.tar.gz
 # tar -zxvf rsync-3.1.2.tar.gz
 # cd rsync-3.1.2
 # ./configure
