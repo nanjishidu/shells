@@ -27,7 +27,7 @@ sersync是基于前两者开发的工具，不仅保留了优点同时还强化�
 # 路径:本地监听目录
 # ./sersync.sh 用户名 密码  模块名  ip 路径
 # 如果不填使用默认配置
-# ./sersync.sh nanjishidu 3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=  htdocs  /var/www/htdocs  192.168.1.3
+# ./sersync.sh nanjishidu 3ro4FUfqquh8WVn2PxCCCEDY5WFrU1nsGgjznStWKiQ=  htdocs  192.168.1.3 /var/www/htdocs  
 wget https://raw.githubusercontent.com/nanjishidu/shells/master/rsync-sersync/sersync.sh
 chmod +x sersync.sh
 ./sersync.sh
