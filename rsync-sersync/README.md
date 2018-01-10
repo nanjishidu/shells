@@ -44,7 +44,7 @@ chmod +x rysnc.sh
 ./rysnc.sh
 ```
 
-### 2.2配置多服务器同步
+### 2.2配置多服务器同步
 
 * 在C和D 执行和B服务器相同命令
 * 修改主服务器 /usr/local/sersync/confxml.xml 配置，实现A的数据实时同步到B C D。
@@ -57,6 +57,6 @@ chmod +x rysnc.sh
 </localpath>
 ```
 
-### 2.3配置多模块同步
+### 2.3配置多模块同步
 
 如果需要配置多个模块拷贝多份主服务器 /usr/local/sersync/confxml.xml修改启动多个实例，每个实例只能监听一个目录
