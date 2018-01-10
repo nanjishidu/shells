@@ -1,4 +1,4 @@
-# ubuntu 配置 sersync + inotity + rsync 实现数据实时同步
+# sersync + inotity + rsync 实现数据实时同步
 
 ## 1.前言
 
