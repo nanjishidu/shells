@@ -29,7 +29,7 @@ fi
 if [ ! -d ${cluster_path} ]; then
 	mkdir -p ${cluster_path}
 fi
-yum update && yum -y install gcc gcc-c++ kernel-devel make wget vim
+yum -y update && yum -y install gcc gcc-c++ kernel-devel make wget vim
 wget -c https://download.redis.io/releases/redis-6.2.3.tar.gz -O ${cluster_path}/redis-6.2.3.tar.gz
 tar -zxvf ${cluster_path}/redis-6.2.3.tar.gz -C ${cluster_path}
 cd ${cluster_path}/redis-6.2.3 && make && make install PREFIX=${cluster_path}
